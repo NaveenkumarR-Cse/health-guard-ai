@@ -5,6 +5,7 @@ import { weeklyCases, waterQualityData, villageRiskData } from "@/data/dummy-dat
 import { LineChart, Line, BarChart, Bar, XAxis, YAxis, CartesianGrid, Tooltip, Legend, ResponsiveContainer, AreaChart, Area } from "recharts";
 import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
+import VillageMap from "@/components/VillageMap";
 
 const Dashboard = () => {
   const [editing, setEditing] = useState(false);
@@ -124,6 +125,12 @@ const Dashboard = () => {
               </AreaChart>
             </ResponsiveContainer>
           </div>
+        </div>
+
+        {/* Village Risk Map */}
+        <div className="glass-card p-6 mb-8">
+          <h3 className="font-heading font-semibold mb-4">Village Risk Map</h3>
+          <VillageMap villages={villageRiskData} />
         </div>
 
         {/* Village Risk Table */}
